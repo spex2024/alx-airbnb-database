@@ -1,0 +1,1 @@
+![Sample Data Flow](../alx-arbnb.drawio.png)
