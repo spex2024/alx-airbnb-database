@@ -16,3 +16,12 @@ FROM
     bookings
 GROUP BY 
     property_id;
+
+-- Query to assign a unique row number to each booking per user, ordered by booking_date
+SELECT
+    user_id,
+    id AS booking_id,
+    booking_date,
+    ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY booking_date) AS booking_row_number
+FROM
+    bookings;
